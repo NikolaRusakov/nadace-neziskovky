@@ -1,10 +1,22 @@
 require('source-map-support').install();
+
+var proxy = require('http-proxy-middleware');
+
 require('ts-node').register({
   compilerOptions: {
     module: 'commonjs',
     target: 'es2017',
   },
 });
+
+if (process.env.ENVIROMENT !== 'production') {
+  require('dotenv').config();
+}
+
+const contentfulConfig = {
+  spaceId: process.env.SPACE_ID,
+  accessToken: process.env.ACCESS_TOKEN,
+};
 
 const config = require('./config/SiteConfig').default;
 const pathPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix;
@@ -41,6 +53,10 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-contentful`,
+      options: contentfulConfig,
+    },
+    {
       resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
@@ -75,5 +91,17 @@ module.exports = {
         icon: config.favicon,
       },
     },
-  ]
+    'gatsby-plugin-netlify',
+  ],
+  developMiddleware: app => {
+    app.use(
+      '/.netlify/functions/',
+      proxy({
+        target: 'http://localhost:9000',
+        pathRewrite: {
+          '/.netlify/functions/': '',
+        },
+      }),
+    );
+  },
 };
