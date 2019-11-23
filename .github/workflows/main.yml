@@ -11,6 +11,9 @@ jobs:
         with:
           node-version: 10.x
       - name: npm install, build
+        env:
+          SPACE_ID: ${{ secrets.SPACE_ID }}
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         run: |
           npm install
           npm run build
