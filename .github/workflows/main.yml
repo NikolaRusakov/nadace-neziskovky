@@ -9,7 +9,7 @@ jobs:
         uses: treosh/lighthouse-ci-action@v2
         with:
           urls:
-            https://qainsights.github.io/Lighthouse-CI-Demo-Repo/
+            https://nadace-neziskovky.now.sh/
       - name: Save results
         uses: actions/upload-artifact@v1
         with:
