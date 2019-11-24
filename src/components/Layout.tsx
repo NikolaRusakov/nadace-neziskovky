@@ -28,8 +28,13 @@ const GlobalStyle = createGlobalStyle`
     background: ${theme.colors.hover};
   }
   body {
+<<<<<<< HEAD
     background: ${theme.colors.white};
     color: ${theme.colors.grey.default};
+=======
+    background: ${theme.colors.bg};
+    color: ${theme.colors.white};
+>>>>>>> b732ae31de78953f5ed954ac721abbf2c44946f2
     font-family: ${theme.fonts.main};
     @media ${media.phone} {
       font-size: 14px;
