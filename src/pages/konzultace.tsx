@@ -91,16 +91,6 @@ const SubSection = styled.figure`
 `;
 // const sectionQuery=(props:any)=>)
 
-const contentOptions = {
-  renderMark: {
-    // @ts-ignore
-    [MARKS.BOLD]: text => `<pre>${text}<custom-bold>`,
-  },
-  renderNode: {
-    // @ts-ignore
-    [BLOCKS.PARAGRAPH]: (node, next) => `<p>${next(node.content)}</p>`,
-  },
-};
 const logo = () => <Logo src={'/assets/logo.png'} alt="Logo Neziskovky.cz" />;
 export default class KonzultacePage extends React.Component<PageProps> {
   public render() {
