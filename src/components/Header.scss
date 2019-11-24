@@ -1,0 +1,76 @@
+.logo {
+  height: 40px;
+  filter: brightness(999999999999);
+  margin: 1.5em;
+}
+.hamburger {
+  position: absolute;
+  margin: 2em;
+  width: 40px;
+  height: 40px;
+  right: 0;
+  z-index: 4;
+  cursor: pointer;
+  user-select: none;
+}
+.hamburger > span {
+  position: absolute;
+  width: 30px;
+  height: 5px;
+  background: #fff;
+  border-radius: 5px;
+}
+h1 {
+  font-size: 2.5em;
+}
+// span.one {
+//   position: absolute;
+//   width: 30px;
+//   height: 5px;
+//   background: #fff;
+//   border-radius: 5px;
+// }
+span.two {
+  margin-top: 12px;
+}
+span.three {
+  margin-top: 24px;
+}
+.menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 3;
+  position: fixed;
+  background: #101010f3;
+  height: 100vh;
+  width: 100%;
+  top: -200%;
+}
+ul {
+  list-style: none;
+  margin: 0 10%;
+  text-align: left;
+}
+li:first-child {
+  color: rgb(179, 179, 179);
+  font-family: Poppins;
+  font-size: 2rem;
+}
+li:not(:first-child) {
+  color: #fff;
+  font-size: 1.5rem;
+}
+a {
+  text-decoration: none;
+  color: #fff;
+  font-family: Poppins;
+}
+a:hover {
+  text-decoration: none;
+  color: #04a8a8;
+}
+//scroll dark mode
+.darkMode {
+  background-color: #111 !important;
+}
