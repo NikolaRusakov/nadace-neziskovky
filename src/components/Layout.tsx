@@ -1,33 +1,55 @@
 import React from 'react';
-import { StaticQuery, graphql } from 'gatsby';
 import styled, { ThemeProvider, createGlobalStyle } from 'styled-components';
 import theme from '../../config/Theme';
 import { media } from '../utils/media';
-import split from 'lodash/split';
 import './layout.scss';
+import { SEO } from './SEO';
 
 const GlobalStyle = createGlobalStyle`
+  @font-face {
+    font-family: 'VAGRundschriftDLig';
+    src: url('fonts/hinted-VAGRundschriftD-Lig.woff2') format('woff2'),
+        url('fonts/hinted-VAGRundschriftD-Lig.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'VAGRundschriftD';
+    src: url('fonts/hinted-VAGRundschriftD.woff2') format('woff2'),
+        url('fonts/hinted-VAGRundschriftD.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
   ::selection {
-    color: ${theme.colors.bg};
-    background: ${theme.colors.primary};
+    color: ${theme.colors.white};
+    background: ${theme.colors.hover};
   }
   body {
-    background: ${theme.colors.bg};
+<<<<<<< HEAD
+    background: ${theme.colors.white};
     color: ${theme.colors.grey.default};
+=======
+    background: ${theme.colors.bg};
+    color: ${theme.colors.white};
+>>>>>>> b732ae31de78953f5ed954ac721abbf2c44946f2
+    font-family: ${theme.fonts.main};
     @media ${media.phone} {
       font-size: 14px;
     }
   }
   a {
-    color: ${theme.colors.grey.dark};
+    color: ${theme.colors.white};
     text-decoration: none;
     transition: all ${theme.transitions.normal};
   }
   a:hover {
-    color: ${theme.colors.primary};
+    color: ${theme.colors.hover};
   }
   h1, h2, h3, h4 {
-    color: ${theme.colors.grey.dark};
+    color: ${theme.colors.white};
   }
   blockquote {
     font-style: italic;
@@ -61,12 +83,35 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const Footer = styled.footer`
+  background-color: ${theme.colors.bg};
+  color: ${theme.colors.white};
   text-align: center;
-  padding: 1rem 0;
-  span {
-    font-size: 0.75rem;
+  padding: 3rem 0;
+  p {
+    position: relative;
+    left: 50%;
+    text-align: left;
   }
-  background-color: pink;
+  img {
+    width: 15%;
+    height: auto;
+    position: absolute;
+    left: 25%;
+  }
+  @media ${media.phone} {
+    img {
+      width: 70%;
+      margin: 0 auto;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    p {
+      display: block;
+      left: 0%;
+      margin: 150px 2rem 0;
+      font-size: 16px;
+    }
+  }
 `;
 
 export class Layout extends React.PureComponent<{}> {
@@ -74,28 +119,29 @@ export class Layout extends React.PureComponent<{}> {
     const { children } = this.props;
 
     return (
-      <StaticQuery
-        query={graphql`
-          query LayoutQuery {
-            site {
-              buildTime(formatString: "DD.MM.YYYY")
-            }
-          }
-        `}
-        render={data => (
-          <ThemeProvider theme={theme}>
-            <React.Fragment>
-              <GlobalStyle />
-              {children}
-              <Footer>
-                &copy; {split(data.site.buildTime, '.')[2]}. All rights reserved. <br />
-                {/*<a href="https://github.com/mhadaily/gatsby-starter-typescirpt-power-blog">GitHub Repository</a> <br />*/}
-                <span>Last build: {data.site.buildTime}</span>
-              </Footer>
-            </React.Fragment>
-          </ThemeProvider>
-        )}
-      />
+      <>
+        <SEO postSEO={false} />
+        <ThemeProvider theme={theme}>
+          <>
+            <GlobalStyle />
+            {children}
+            <Footer>
+              <img src={`assets/nadace_neziskovky_cz_logo_pink.svg`} alt="Logo nadace neziskovky" />
+              <p>
+                <b>Nadace Neziskovky.cz</b>
+                <br />
+                Vlkova 628/36, 130 00 Praha 3 - Žižkov
+                <br />
+                tel.:{' '}
+                <a href="tel:+420730517966" aria-label={'+ 4 2 0. 7 3 0. 5 1 7. 9 6 6.'}>
+                  +420 730 517 966
+                </a>
+                , e-mail: <a href="mailto:nadace@neziskovky.cz">nadace@neziskovky.cz</a>
+              </p>
+            </Footer>
+          </>
+        </ThemeProvider>
+      </>
     );
   }
 }
