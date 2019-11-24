@@ -93,6 +93,21 @@ const Footer = styled.footer`
     position: absolute;
     left: 25%;
   }
+  @media ${media.phone} {
+    img {
+      width: 70%;
+      margin: 0 auto;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    p {
+      display: block;
+      width: 100%;
+      left: 0%;
+      margin: 150px 2rem 0;
+      font-size: 16px;
+    }
+  }
 `;
 
 export class Layout extends React.PureComponent<{}> {
