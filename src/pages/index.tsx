@@ -9,6 +9,7 @@ import { media } from '../utils/media';
 import rgba from 'polished/lib/color/rgba';
 import darken from 'polished/lib/color/darken';
 import lighten from 'polished/lib/color/lighten';
+import { EventCard } from '../components/EventCard';
 
 const Homepage = styled.main`
   display: flex;
@@ -118,6 +119,12 @@ export default class IndexPage extends React.Component<PageProps> {
             </GridRow>
           </Homepage>
         </Wrapper>
+        <EventCard
+          imgSrc="assets/bg/1.jpg"
+          date="29. 6. 2020"
+          price="4200 Kč"
+          title={'Kdo to tu řídí? Ředitelé Cesty domů a Sue Ryder otevřeli černé skříňky'}
+        />
       </Layout>
     );
   }

@@ -29,7 +29,7 @@ const GlobalStyle = createGlobalStyle`
   }
   body {
     background: ${theme.colors.bg};
-    color: ${theme.colors.grey.default};
+    color: ${theme.colors.white};
     font-family: ${theme.fonts.main};
     @media ${media.phone} {
       font-size: 14px;
