@@ -126,7 +126,7 @@ export class Layout extends React.PureComponent<{}> {
             <GlobalStyle />
             {children}
             <Footer>
-              <img src={`assets/nadace_neziskovky_cz_logo_pink.svg`} alt="Logo nadace neziskovky" />
+              <img src={`/assets/nadace_neziskovky_cz_logo_pink.svg`} alt="Logo nadace neziskovky" />
               <p>
                 <b>Nadace Neziskovky.cz</b>
                 <br />
