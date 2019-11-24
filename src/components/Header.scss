@@ -1,3 +1,23 @@
+* {
+  font-family: 'VAGRundschriftDLig';
+}
+.uspWrapper {
+  min-height: 200px;
+  background-color: rgb(19, 36, 87);
+  color: rgb(85, 83, 83);
+  padding: 10px;
+  h1 {
+    font-size: 28px;
+    text-align: center;
+  }
+  h2 {
+    text-align: center;
+    font-size: 22px;
+  }
+}
+.bodyWrapper {
+  margin-top: calc(40px + 3em);
+}
 .logo {
   height: 40px;
   filter: brightness(999999999999);
@@ -5,7 +25,7 @@
 }
 .hamburger {
   position: absolute;
-  margin: 2em;
+  margin: 1.5em;
   width: 40px;
   height: 40px;
   right: 0;

@@ -73,12 +73,18 @@ export default class IndexPage extends React.Component<PageProps> {
         <Wrapper fullWidth={true}>
           <Helmet title={`Homepage | ${config.siteTitle}`} />
         </Wrapper>
-        <EventCard
-          imgSrc="assets/bg/1.jpg"
-          date="29. 6. 2020"
-          price="4200 Kč"
-          title={'Kdo to tu řídí? Ředitelé Cesty domů a Sue Ryder otevřeli černé skříňky'}
-        />
+        <Wrapper fullWidth={true} className="bodyWrapper">
+          <div className="uspWrapper">
+            <h1>Pomáháme českým neziskovkám růst</h1>
+            <h2>Nejširší nabídka kurzů a poradenství pro neziskový sektor</h2>
+          </div>
+          <EventCard
+            imgSrc="assets/bg/1.jpg"
+            date="29. 6. 2020"
+            price="4200 Kč"
+            title={'Kdo to tu řídí? Ředitelé Cesty domů a Sue Ryder otevřeli černé skříňky'}
+          />
+        </Wrapper>
       </Layout>
     );
   }
