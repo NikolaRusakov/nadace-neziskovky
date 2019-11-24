@@ -33,7 +33,7 @@ const header = () => (
   <Fragment>
     <li>Menu</li>
     <li>
-      <Link className="navLink" to={'Domu'}>
+      <Link className="navLink" to={'konzultace'}>
         Konzultace
       </Link>
     </li>

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Layout, Wrapper, BurgerHeader } from '../components';
 import { StaticQuery, graphql, Link } from 'gatsby';
 import { BLOCKS, MARKS } from '@contentful/rich-text-types';
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+// import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 import Helmet from 'react-helmet';
 import config from '../../config/SiteConfig';
@@ -32,7 +32,6 @@ const Logo = styled.img`
 `;
 
 const HomepageContent: any = styled.div`
-  max-width: 30rem;
   text-align: ${(props: any) => (props.center ? 'center' : 'left')};
 `;
 
@@ -44,6 +43,7 @@ const Section = styled.section`
   box-shadow: 0 4px 32px rgba(130, 122, 122, 0.6);
   background-color: #132457;
   color: #ffffff;
+  margin-top: 10vh;
 `;
 
 const header = () => (
@@ -79,6 +79,16 @@ const SubSection = styled.figure`
   color: #000;
   font-size: 1rem;
   width: 90%;
+  margin-top: 10vh;
+  @media (min-width: 1025px) {
+    margin-left: 25%
+    width: 50vw;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    background-color: pink;
+  }
 `;
 // const sectionQuery=(props:any)=>)
 
