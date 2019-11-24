@@ -5,8 +5,8 @@ import config from '../../config/SiteConfig';
 import Post from '../models/Post';
 
 interface SEO {
-  postNode: Post;
-  postPath: string;
+  postNode?: Post;
+  postPath?: string;
   postSEO: boolean;
 }
 
@@ -17,7 +17,7 @@ export const SEO = (props: SEO) => {
   let image;
   let postURL;
   const realPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix;
-  if (postSEO) {
+  if (postSEO && postNode) {
     const postMeta = postNode.frontmatter;
     title = postMeta.title;
     description = postNode.excerpt;

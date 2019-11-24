@@ -4,7 +4,7 @@ export default {
   siteTitle: 'Neziskovky Vzdělávání', // Navigation and Site Title
   siteTitleAlt: 'Neziskovky - Vzdělávání', // Alternative Site title for SEO
   siteUrl: 'https://typescript-power-blog.github.com', // Domain of your site. No trailing slash!
-  siteLanguage: 'en', // Language Tag on <html> element
+  siteLanguage: 'cs', // Language Tag on <html> element
   siteBanner: '/assets/banner.jpg', // Your image for og:image tag. You can find it in the /static folder
   defaultBg: '/assets/bg.png', // default post background header
   favicon: 'src/favicon.png', // Your image for favicons. You can find it in the /src folder
