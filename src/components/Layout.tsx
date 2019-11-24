@@ -3,6 +3,7 @@ import styled, { ThemeProvider, createGlobalStyle } from 'styled-components';
 import theme from '../../config/Theme';
 import { media } from '../utils/media';
 import './layout.scss';
+import { SEO } from './SEO';
 
 const GlobalStyle = createGlobalStyle`
   @font-face {
@@ -11,6 +12,7 @@ const GlobalStyle = createGlobalStyle`
         url('fonts/hinted-VAGRundschriftD-Lig.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
   }
 
   @font-face {
@@ -19,6 +21,7 @@ const GlobalStyle = createGlobalStyle`
         url('fonts/hinted-VAGRundschriftD.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
   }
   ::selection {
     color: ${theme.colors.white};
@@ -97,26 +100,29 @@ export class Layout extends React.PureComponent<{}> {
     const { children } = this.props;
 
     return (
-      <ThemeProvider theme={theme}>
-        <React.Fragment>
-          <GlobalStyle />
-          {children}
-          <Footer>
-            <img src={`assets/nadace_neziskovky_cz_logo_pink.svg`} alt="Logo nadace neziskovky" />
-            <p>
-              <b>Nadace Neziskovky.cz</b>
-              <br />
-              Vlkova 628/36, 130 00 Praha 3 - Žižkov
-              <br />
-              tel.:{' '}
-              <a href="tel:+420730517966" aria-label={'+ 4 2 0. 7 3 0. 5 1 7. 9 6 6.'}>
-                +420 730 517 966
-              </a>
-              , e-mail: <a href="mailto:nadace@neziskovky.cz">nadace@neziskovky.cz</a>
-            </p>
-          </Footer>
-        </React.Fragment>
-      </ThemeProvider>
+      <>
+        <SEO postSEO={false} />
+        <ThemeProvider theme={theme}>
+          <>
+            <GlobalStyle />
+            {children}
+            <Footer>
+              <img src={`assets/nadace_neziskovky_cz_logo_pink.svg`} alt="Logo nadace neziskovky" />
+              <p>
+                <b>Nadace Neziskovky.cz</b>
+                <br />
+                Vlkova 628/36, 130 00 Praha 3 - Žižkov
+                <br />
+                tel.:{' '}
+                <a href="tel:+420730517966" aria-label={'+ 4 2 0. 7 3 0. 5 1 7. 9 6 6.'}>
+                  +420 730 517 966
+                </a>
+                , e-mail: <a href="mailto:nadace@neziskovky.cz">nadace@neziskovky.cz</a>
+              </p>
+            </Footer>
+          </>
+        </ThemeProvider>
+      </>
     );
   }
 }
