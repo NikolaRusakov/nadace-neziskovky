@@ -2,7 +2,6 @@ import React, { Fragment } from 'react';
 import styled from 'styled-components';
 import { Layout, Wrapper, BurgerHeader } from '../components';
 import { StaticQuery, graphql, Link } from 'gatsby';
-import { BLOCKS, MARKS } from '@contentful/rich-text-types';
 // import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 import Helmet from 'react-helmet';
