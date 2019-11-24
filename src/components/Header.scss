@@ -2,34 +2,39 @@
   position: fixed;
   margin: 1.4em;
   width: 40px;
-  height: 12px;
+  height: 40px;
   right: 0;
   z-index: 2;
   cursor: pointer;
+  user-select: none;
+}
+.hamburger > span {
+  position: absolute;
+  width: 30px;
+  height: 5px;
+  background: #fff;
+  border-radius: 5px;
 }
 h1 {
   font-size: 2.5em;
-  
 }
-span.one {
-  position: absolute;
-  width: 40px;
-  height: 2px;
-  background: #fff;
-}
+// span.one {
+//   position: absolute;
+//   width: 30px;
+//   height: 5px;
+//   background: #fff;
+//   border-radius: 5px;
+// }
 span.two {
-  position: absolute;
-  width: 30px;
-  height: 2px;
-  background: #fff;
   margin-top: 12px;
-  margin-left: 10px;
+}
+span.three {
+  margin-top: 24px;
 }
 .menu {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  text-align: center;
   z-index: 1;
   position: fixed;
   background: #101010f3;
@@ -39,16 +44,17 @@ span.two {
 }
 ul {
   list-style: none;
-  margin: 0;
+  margin: 0 10%;
+  text-align: left;
 }
 li:first-child {
   color: rgb(179, 179, 179);
   font-family: Poppins;
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 li:not(:first-child) {
   color: #fff;
-  font-size: 2.5rem;
+  font-size: 1.5rem;
 }
 a {
   text-decoration: none;

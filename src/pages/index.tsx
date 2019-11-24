@@ -30,22 +30,35 @@ const HomepageContent: any = styled.div`
 `;
 const header = () => (
   <Fragment>
-    <li>Navigation</li>
+    <li>Menu</li>
     <li>
       <Link className="navLink" to={'Domu'}>
-        Home
+        Konzultace
       </Link>
     </li>
-    <li>Navigation</li>
     <li>
       <Link className="navLink" to={'Detail'}>
-        Detail
+        Vzdělávání
       </Link>
     </li>
-    <li>Navigation</li>
     <li>
       <Link className="navLink" to={'Home'}>
-        Home
+        Jak založit NNO
+      </Link>
+    </li>
+    <li>
+      <Link className="navLink" to={'Home'}>
+        Pro Firmy a donory
+      </Link>
+    </li>
+    <li>
+      <Link className="navLink" to={'Home'}>
+        Práce v NNO
+      </Link>
+    </li>
+    <li>
+      <Link className="navLink" to={'Home'}>
+        O nás
       </Link>
     </li>
   </Fragment>

@@ -74,12 +74,13 @@ export class Header extends React.PureComponent<Props> {
 
 export const BurgerHeader = (props: Props) => {
   useEffect(() => {
-    const whiteSection: HTMLCollectionOf<Element> = document.getElementsByClassName('menu');
+    document.getElementsByClassName('Projects');
     const t1 = new TimelineMax({ paused: true });
     const t2 = new TimelineMax({ paused: true });
     t1.to('.one', 0.3, {
       y: 6,
       rotation: 45,
+      width: '40px',
       ease: Expo.easeInOut,
     });
     t1.to('.two', 0.3, {
@@ -90,6 +91,11 @@ export const BurgerHeader = (props: Props) => {
       ease: Expo.easeInOut,
       delay: -0.3,
     });
+    t1.to('.three', 0.3, {
+      opacity: 0,
+      ease: Expo.easeInOut,
+      delay: -0.3,
+    });
     t1.to('.menu', 1, {
       top: '0%',
       ease: Expo.easeInOut,
@@ -97,16 +103,14 @@ export const BurgerHeader = (props: Props) => {
     });
     t1.staggerFrom('.menu ul li', 0.4, { x: window.innerWidth, opacity: 0, ease: Expo.easeOut }, 0.1);
     t1.reverse();
-    // if (document == null) {
-    //   return <div/>;
-    // }
     t2.to('span', 0.6, { backgroundColor: '#111', ease: Expo.easeOut });
-    document.querySelector('.menu')!.addEventListener('click', () => {
+    document.querySelector('.hamburger')!.addEventListener('click', () => {
       t1.reversed(!t1.reversed());
+      // styling hamburger based on height part 1
       // @ts-ignore
-      if (window.scrollY >= whiteSection[0].offsetTop) {
-        t2.reversed(!t2.reversed());
-      }
+      // if (window.scrollY >= whiteSection[0].offsetTop) {
+      //   t2.reversed(!t2.reversed());
+      // }
     });
     document.querySelectorAll('.navLink').forEach(a => {
       a.addEventListener('click', () => {
@@ -114,47 +118,25 @@ export const BurgerHeader = (props: Props) => {
       });
     });
 
-    document.addEventListener('scroll', () => {
-      // @ts-ignore
-      if (window.scrollY >= whiteSection[0].offsetTop && t1.reversed()) {
-        t2.play();
-      } else {
-        t2.reverse();
-      }
-    });
+    // styling hamburger based on height part2
+    // document.addEventListener('scroll', function() {
+    //   // @ts-ignore
+    //   if (window.scrollY >= whiteSection[0].offsetTop && t1.reversed()) {
+    //     t2.play();
+    //   } else {
+    //     t2.reverse();
+    //   }
+    // });
   });
 
-  const onClick = () => {
-    console.log('click');
-    document.querySelector('.hamburger')!.addEventListener('click', () => {
-      const whiteSection: HTMLCollectionOf<Element> = document.getElementsByClassName('menu');
-      const t1 = new TimelineMax({ paused: true });
-      const t2 = new TimelineMax({ paused: true });
-
-      t1.reversed(!t1.reversed());
-      // @ts-ignore
-      if (window.scrollY >= whiteSection[0].offsetTop) {
-        t2.reversed(!t2.reversed());
-      }
-    });
-  };
-  const onNavigate = () => {
-    const t1 = new TimelineMax({ paused: true });
-    document.querySelector('.hamburger')!.addEventListener('click', () => {
-      document.querySelectorAll('.navLink').forEach(a => {
-        a.addEventListener('click', () => {
-          t1.reversed(!t1.reversed());
-        });
-      });
-    });
-  };
   return (
     <Fragment>
       <Menu>
         <h1>{props.banner}</h1>
-        <div className="hamburger" onClick={onClick}>
+        <div className="hamburger">
           <span className="one" />
           <span className="two" />
+          <span className="three" />
         </div>
         <div className="menu">
           <div className="data">
