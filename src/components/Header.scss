@@ -1,10 +1,15 @@
+.logo {
+  height: 40px;
+  filter: brightness(999999999999);
+  margin: 1.5em;
+}
 .hamburger {
-  position: fixed;
-  margin: 1.4em;
+  position: absolute;
+  margin: 2em;
   width: 40px;
   height: 40px;
   right: 0;
-  z-index: 2;
+  z-index: 4;
   cursor: pointer;
   user-select: none;
 }
@@ -35,7 +40,7 @@ span.three {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  z-index: 1;
+  z-index: 3;
   position: fixed;
   background: #101010f3;
   height: 100vh;

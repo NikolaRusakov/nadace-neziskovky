@@ -20,9 +20,6 @@ const Homepage = styled.main`
     flex-direction: column;
   }
 `;
-const Logo = styled.img`
-  display: fixed;
-`;
 
 const HomepageContent: any = styled.div`
   max-width: 30rem;
@@ -68,15 +65,9 @@ export default class IndexPage extends React.Component<PageProps> {
   public render() {
     return (
       <Layout>
-        <BurgerHeader menuItems={header} banner={'Neziskovky.cz'} />
+        <BurgerHeader menuItems={header} />
         <Wrapper fullWidth={true}>
           <Helmet title={`Homepage | ${config.siteTitle}`} />
-          <Homepage>
-            <HomepageContent center={true}>
-              <Logo src={'/assets/logo.png'} alt="Logo Neziskovky.cz" />
-              <img src={config.siteLogo} alt="Neziskovky.cz uvodni stranka" tab-index={0} />
-            </HomepageContent>
-          </Homepage>
         </Wrapper>
       </Layout>
     );

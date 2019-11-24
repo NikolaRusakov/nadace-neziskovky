@@ -54,7 +54,8 @@ const Content = styled.div`
 const Menu = styled.header`
   display: inline-flex;
   width: 100vw;
-  background-color: pink;
+  background-color: rgb(19, 36, 87);
+  position: fixed;
 `;
 
 interface Props {
@@ -132,7 +133,7 @@ export const BurgerHeader = (props: Props) => {
   return (
     <Fragment>
       <Menu>
-        <h1>{props.banner}</h1>
+        <img className="logo" src={'/assets/logo.png'} alt="Logo Neziskovky.cz" />
         <div className="hamburger">
           <span className="one" />
           <span className="two" />

@@ -28,7 +28,7 @@ const GlobalStyle = createGlobalStyle`
     background: ${theme.colors.hover};
   }
   body {
-    background: ${theme.colors.bg};
+    background: ${theme.colors.white};
     color: ${theme.colors.grey.default};
     font-family: ${theme.fonts.main};
     @media ${media.phone} {
