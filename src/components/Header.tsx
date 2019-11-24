@@ -56,6 +56,7 @@ const Menu = styled.header`
   width: 100vw;
   background-color: rgb(19, 36, 87);
   position: fixed;
+  z-index: 20;
 `;
 
 interface Props {

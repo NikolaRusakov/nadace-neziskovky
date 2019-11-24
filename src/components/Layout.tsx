@@ -107,7 +107,6 @@ const Footer = styled.footer`
     }
     p {
       display: block;
-      width: 100%;
       left: 0%;
       margin: 150px 2rem 0;
       font-size: 16px;
