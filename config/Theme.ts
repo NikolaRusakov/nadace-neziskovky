@@ -1,6 +1,7 @@
 const colors = {
-  primary: '#72cc96', // Color for buttons or links
-  bg: '#fff', // Background color
+  primary: '#fff', // Color for buttons or links
+  bg: 'rgb(19, 36, 87)', // Background color
+  hover: 'rgb(175, 4, 96)',
   white: '#fff',
   grey: {
     dark: 'rgba(0, 0, 0, 0.9)',
@@ -8,6 +9,11 @@ const colors = {
     light: 'rgba(0, 0, 0, 0.5)',
     ultraLight: 'rgba(0, 0, 0, 0.25)',
   },
+};
+
+const fonts = {
+  main: 'VAGRundschriftDLig',
+  side: 'VAGRundschriftD',
 };
 
 const transitions = {
@@ -23,4 +29,5 @@ export default {
   colors,
   transitions,
   fontSize,
+  fonts,
 };
