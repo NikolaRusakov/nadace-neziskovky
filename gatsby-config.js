@@ -36,6 +36,7 @@ module.exports = {
     'gatsby-plugin-catch-links',
     'gatsby-plugin-sitemap',
     'gatsby-plugin-lodash',
+    'gatsby-plugin-sass',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
