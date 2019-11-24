@@ -55,11 +55,13 @@ const Menu = styled.header`
   display: inline-flex;
   width: 100vw;
   background-color: pink;
+  justify-content: space-around;
 `;
 
 interface Props {
   banner?: string;
   menuItems: any;
+  logo?: any;
 }
 
 export class Header extends React.PureComponent<Props> {
@@ -71,7 +73,7 @@ export class Header extends React.PureComponent<Props> {
     );
   }
 }
-
+// const Logo=div.styled;
 export const BurgerHeader = (props: Props) => {
   useEffect(() => {
     const whiteSection: HTMLCollectionOf<Element> = document.getElementsByClassName('menu');
@@ -151,6 +153,7 @@ export const BurgerHeader = (props: Props) => {
   return (
     <Fragment>
       <Menu>
+        <div>{props.logo()}</div>
         <h1>{props.banner}</h1>
         <div className="hamburger" onClick={onClick}>
           <span className="one" />

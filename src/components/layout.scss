@@ -37,3 +37,9 @@ $blue: #017ac7;
 // Transition
 $duration: 400ms;
 $easing: ease;
+
+html {
+  overflow-y: scroll;
+  width: 100vw;
+  overflow-x: hidden;
+}

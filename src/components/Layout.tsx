@@ -62,10 +62,11 @@ const GlobalStyle = createGlobalStyle`
 
 const Footer = styled.footer`
   text-align: center;
-  padding: 3rem 0;
+  padding: 1rem 0;
   span {
     font-size: 0.75rem;
   }
+  background-color: pink;
 `;
 
 export class Layout extends React.PureComponent<{}> {
@@ -87,8 +88,8 @@ export class Layout extends React.PureComponent<{}> {
               <GlobalStyle />
               {children}
               <Footer>
-                &copy; {split(data.site.buildTime, '.')[2]} by Majid Hajian. All rights reserved. <br />
-                <a href="https://github.com/mhadaily/gatsby-starter-typescirpt-power-blog">GitHub Repository</a> <br />
+                &copy; {split(data.site.buildTime, '.')[2]}. All rights reserved. <br />
+                {/*<a href="https://github.com/mhadaily/gatsby-starter-typescirpt-power-blog">GitHub Repository</a> <br />*/}
                 <span>Last build: {data.site.buildTime}</span>
               </Footer>
             </React.Fragment>
