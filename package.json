@@ -25,11 +25,19 @@
     "start": "gatsby develop",
     "deploy": "gatsby build --prefix-paths && gh-pages -d public",
     "gql:types": "npx graphql-codegen -c codegen.yml",
+    "webhint": "hint -- http://localhost:8000",
     "lint": "tslint --project .",
     "lint:fix": "tslint --fix --project .",
     "fix": "prettier --write 'src/**/*.{ts,tsx,scss,md}' && tslint --fix 'src/**/*.{ts,tsx}' -p tsconfig.json && stylelint --fix 'src/**/*.scss' "
   },
   "devDependencies": {
+    "@graphql-codegen/add": "~1.7.0",
+    "@graphql-codegen/cli": "~1.7.0",
+    "@graphql-codegen/typescript": "~1.7.0",
+    "@graphql-codegen/typescript-apollo-angular": "~1.7.0",
+    "@graphql-codegen/typescript-operations": "~1.7.0",
+    "@hint/configuration-accessibility": "^1.0.11",
+    "@types/gsap": "^1.20.2",
     "@types/lodash": "^4.14.149",
     "@types/react": "^16.9.12",
     "@types/react-dom": "^16.9.4",
@@ -55,12 +63,8 @@
     "gatsby-source-contentful": "^2.0.1",
     "gatsby-source-filesystem": "^2.1.38",
     "gatsby-transformer-remark": "^2.6.37",
-    "@graphql-codegen/add": "~1.7.0",
-    "@graphql-codegen/cli": "~1.7.0",
-    "@graphql-codegen/typescript": "~1.7.0",
-    "@graphql-codegen/typescript-apollo-angular": "~1.7.0",
-    "@graphql-codegen/typescript-operations": "~1.7.0",
     "gh-pages": "^2.1.1",
+    "hint": "^5.4.1",
     "husky": "^1.3.1",
     "lint-staged": "^7.3.0",
     "lodash": "^4.17.15",
@@ -90,6 +94,7 @@
   },
   "dependencies": {
     "gatsby-plugin-google-tagmanager": "^2.1.17",
+    "gsap": "^2.1.3",
     "http-proxy-middleware": "^0.20.0"
   }
 }
